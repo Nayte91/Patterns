@@ -46,11 +46,19 @@ La classe sujet type aussi là dessus sur attach et detach.
 * La classe observeuse, ici UserObserver. Elle implémente logiquement SplObserver.
 Pour le reste, elle choisi de stocker les users qui ont changé dans un tableau.
 
-## Conclusion
+## Exemples d'utilisation
 
-Pattern très utile, d'ailleurs très certainement employé par Symfony et Doctrine par tout ce qui est eventlisteners, event suscribers, callbacks, ...
+Les barres de progression (installation d'un logiciel par exemple) sont basés là dessus. 
+On ne refait pas une barre à chaque fois, elle reçoit les informations d'update de l'installer pour illustrer la progression.
+
+Symfony l'utilise massivement pour tout ce qui est eventlisteners et eventSuscribers :
+
+## Conclusion
 
 La version élégante est composé de 4 pièces (le sujet, le comportement du sujet pour prévenir et stocker les observeurs, le comportement de l'observeur et l'observeur)
 
 Utiliser SPL permet intelligemment de n'avoir à s'occuper que des 2 classes métier (SPL fourni les 2 interfaces), et par rapport à l'exemple du livre, on n'a pas besoin d'hériter du comportement du sujet (ce qui est super handicapant).
 Par contre, cela alourdi un peu la classe observée, car on doit implémenter les 3 méthodes de l'interface.
+
+## Sources
+Wikipedia : https://fr.wikipedia.org/wiki/Observateur_(patron_de_conception)

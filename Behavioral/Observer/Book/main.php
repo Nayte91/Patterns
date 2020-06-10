@@ -19,3 +19,5 @@ $panda->setDescription('Pire que tout !');
 
 $panda->detach($display);
 $panda->setPrice(1000);
+
+$smartphone->render();

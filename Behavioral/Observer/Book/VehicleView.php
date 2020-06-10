@@ -19,6 +19,11 @@ class VehicleView implements Observer
         $this->updateText();
     }
 
+    public function __destruct()
+    {
+        $this->vehicle->detach($this);
+    }
+
     private function updateText()
     {
         $this->text =
